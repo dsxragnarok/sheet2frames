@@ -1,0 +1,21 @@
+{
+  "name": "sheet2frames",
+  "version": "1.0.0",
+  "description": "Cuts a sprite sheet or strip into individual frame files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sprite",
+    "sheet",
+    "sprite",
+    "strip",
+    "frames"
+  ],
+  "author": "Kevin Phung",
+  "license": "ISC",
+  "dependencies": {
+    "jimp": "^0.3.5"
+  }
+}
