@@ -13,7 +13,7 @@ fn main() {
                         .takes_value(true)
                         .index(1)
                         .help("input file path"))
-                    .arg(Arg::with_name("outputfile")
+                    .arg(Arg::with_name("outputDir")
                         .short("o")
                         .long("output")
                         .required(false)
@@ -34,5 +34,12 @@ fn main() {
                         .help("the number of rows in the sprite sheet"))
                     .get_matches();
 
-    println!("{:?}", matches);
+    let input_file = matches.value_of("inputfile").unwrap();
+    let output_path = matches.value_of("outputDir").unwrap_or(".");
+    let columns: i32 = matches.value_of("columns").unwrap().parse().unwrap();
+    let rows: i32 = matches.value_of("rows").unwrap_or("1").parse().unwrap();
+
+    println!("Input: {}", input_file);
+    println!("Output: {}", output_path);
+    println!("c: {}, r: {}", columns, rows);
 }
