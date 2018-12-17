@@ -1,0 +1,8 @@
+[package]
+name = "sheet2frames"
+version = "0.1.0"
+authors = ["Kevin Phung <phung.kevin@gmail.com>"]
+
+[dependencies]
+clap = "2.32.0"
+raster = "0.2.0"
