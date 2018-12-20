@@ -3,3 +3,5 @@ vscode
 
 /target
 **/*.rs.bk
+
+/test/output
