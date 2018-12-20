@@ -1,8 +1,7 @@
 extern crate clap;
 extern crate raster;
 use clap::{Arg, App};
-use raster::{Image, editor, PositionMode};
-use std::process;
+use raster::{editor, PositionMode};
 use std::path::Path;
 use std::ffi::OsStr;
 
