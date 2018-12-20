@@ -56,9 +56,8 @@ fn main() {
     println!("width: {}, height: {}", source_image.width, source_image.height);
     println!("fwidth: {}, fheight: {}", frame_width, frame_height);
 
-    // let input_filepath = Path::new(input_file);
-    // let extension = input_filepath.extension().unwrap_or(OsStr::new("")).to_str().unwrap();
     let base_filename = Path::new(input_file).file_stem().and_then(OsStr::to_str).unwrap();
+    let output_path = Path::new(output_path);
 
     for row in 0..rows {
         for column in 0..columns {
@@ -66,8 +65,9 @@ fn main() {
             let x = column * frame_width;
             let y = row * frame_height;
             let filename = format!("{} ({})", base_filename, frame_index);
+            let output_filepath = output_path.join(filename);
 
-            println!("{}", filename);
+            println!("{:?}", output_filepath);
         }
     }
 }
