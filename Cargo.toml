@@ -2,6 +2,9 @@
 name = "sheet2frames"
 version = "0.1.0"
 authors = ["Kevin Phung <phung.kevin@gmail.com>"]
+description = "Script to cut a sprite sheet or strip into individual frame files."
+repository = "https://github.com/dsxragnarok/sheet2frames"
+keywords = ["spritesheet","sprite sheet","animation strip","sprite frames","frames","sheet to frames","sheet2frames","sheet 2 frames"]
 
 [dependencies]
 clap = "2.32.0"
