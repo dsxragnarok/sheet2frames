@@ -62,7 +62,7 @@ fn main() {
 
     for row in 0..rows {
         for column in 0..columns {
-            let frame_index = (column * row) + column;
+            let frame_index = (columns * row) + column;
             let x = column * frame_width;
             let y = row * frame_height;
             let filename = format!("{} ({})", base_filename, frame_index);
