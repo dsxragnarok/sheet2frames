@@ -1,7 +1,7 @@
 extern crate clap;
 extern crate raster;
 use clap::{Arg, App};
-use raster::Image;
+use raster::{Image, editor, PositionMode};
 use std::process;
 use std::path::Path;
 use std::ffi::OsStr;
@@ -65,9 +65,14 @@ fn main() {
             let x = column * frame_width;
             let y = row * frame_height;
             let filename = format!("{} ({})", base_filename, frame_index);
-            let output_filepath = output_path.join(filename);
+            let output_filepath = output_path.join(filename).with_extension("png");
 
-            println!("{:?}", output_filepath);
+            let mut frame = source_image.clone();
+            editor::crop(&mut frame, frame_width, frame_height, PositionMode::TopLeft, x, y).unwrap();
+
+            raster::save(&frame, output_filepath.to_str().unwrap()).unwrap();
+
+            println!("saving {:?}", output_filepath);
         }
     }
 }
